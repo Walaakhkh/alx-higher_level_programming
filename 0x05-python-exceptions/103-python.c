@@ -1,4 +1,4 @@
-#include <Python.h>
+#include <floatobject.h>
 #include <stdio.h>
 
 void print_python_list(PyObject *p);
@@ -10,32 +10,32 @@ void print_python_float(PyObject *p);
  */
 void print_python_list(PyObject *p)
 {
-	 Py_ssize_t size, i;
-	 PyObject *item;
+	Py_ssize_t size, i;
+	PyObject *item;
 
-	 fflush(stdout);
+	fflush(stdout);
 
-	 printf("[*] Python list info\n");
+	printf("[*] Python list info\n");
 
-	  if (!PyList_Check(p))
-	  {
-		  printf("  [ERROR] Invalid List Object\n");
-		  return;
-	  }
+	if (!PyList_Check(p))
+	{
+		printf("  [ERROR] Invalid List Object\n");
+		return;
+	}
 
-	  size = ((PyVarObject *)p)->ob_size;
-	  printf("[*] Size of the Python List = %zd\n", size);
-	  printf("[*] Allocated = %zd\n", ((PyListObject *)p)->allocated);
+	size = ((PyVarObject *)p)->ob_size;
+	printf("[*] Size of the Python List = %zd\n", size);
+	printf("[*] Allocated = %zd\n", ((PyListObject *)p)->allocated);
 
-	  for (i = 0; i < size; i++)
-	  {
+	for (i = 0; i < size; i++)
+	{
 		item = ((PyListObject *)p)->ob_item[i];
 		printf("Element %zd: %s\n", i, item->ob_type->tp_name);
 		if (PyBytes_Check(item))
 			print_python3-bytes(items);
 		else if (PyFloat_Check(item))
 			print_python_float(item);
-	  }
+	}
 }
 
 /**
