@@ -4,12 +4,14 @@
 This module defines a class Square that defines a square with a private instance attribute 'size'.
 """
 
+
 class Square:
     """
     This class defines a square with a private instance attribute 'size'.
     
     The size of the square must be an integer greater than or equal to 0.
     """
+
     def __init__(self, size=0):
         """
         Initializes a new Square instance with the given size.
