@@ -1,0 +1,35 @@
+Prints a text with 2 new lines after each of these characters: ., ? and :.
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("Hello. My name is ChatGPT.")
+Hello.
+
+My name is ChatGPT.
+>>> text_indentation("How are you? I am fine. Thanks for asking.")
+How are you?
+
+I am fine.
+
+Thanks for asking.
+>>> text_indentation("Hello: World")
+Hello:
+
+World
+>>> text_indentation("No special characters here")
+No special characters here
+>>> text_indentation("This is a test. Is it working? Yes: it is.")
+This is a test.
+
+Is it working?
+
+Yes:
+
+it is.
+>>> text_indentation(42)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+>>> text_indentation(["Not", "a", "string"])
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
