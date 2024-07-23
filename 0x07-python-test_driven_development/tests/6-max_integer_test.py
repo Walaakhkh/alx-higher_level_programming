@@ -2,7 +2,7 @@
 """Unittest for max_integer([..])
 """
 import unittest
-from 6-max_integer import max_integer
+from 6_max_integer import max_integer
 
 class TestMaxInteger(unittest.TestCase):
     def test_positive_integers(self):
