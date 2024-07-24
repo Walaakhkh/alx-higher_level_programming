@@ -1,1 +1,1 @@
-This is my SQL readme file
+This directory contains SQL scripts for database management.
