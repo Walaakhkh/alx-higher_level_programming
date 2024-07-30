@@ -4,7 +4,7 @@ function factorial (n) {
   if (n === 0 || n === 1) {
     return 1;
   }
-  return n * factorial (n - 1);
+	return n * factorial (n - 1);
 }
 
 // Get the first argument passed to the script
@@ -17,5 +17,5 @@ const num = parseInt(arg);
 if (isNaN(num)) {
   console.log(1);
 } else {
-  console.log(factorial (num));
+  console.log(factorial(num));
 }
