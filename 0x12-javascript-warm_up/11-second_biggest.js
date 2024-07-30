@@ -6,7 +6,7 @@ const args = process.argv.slice(2);
 const numbers = args.map(arg => parseInt(arg));
 
 // Function to find the second largest number
-function findSecondBiggest(nums) {
+function findSecondBiggest (nums) {
   let largest = -Infinity;
   let secondLargest = -Infinity;
 
