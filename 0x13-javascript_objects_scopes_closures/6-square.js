@@ -1,18 +1,17 @@
 #!/usr/bin/node
-// Import the Square class from '5-square.js'
-const PreviousSquare = require('./5-square');
+// Import the Square class from 5-square.js
+const SquareBase = require('./5-square');
 
-// Define the new Square class that extends the previous Square class
-class Square extends PreviousSquare {
-  constructor (size) {
-    super(size); // Call the constructor of the parent Square class
+class Square extends SquareBase {
+  constructor(size) {
+    super(size); // Call the parent constructor
   }
 
-  charPrint (c) {
-    // Print the square using the character c or 'X' if c is not provided
-    const char = c || 'X';
+  // Method to print the square with the specified character
+  charPrint(c) {
+    const char = c || 'X'; // Use 'X' if c is not provided
     for (let i = 0; i < this.size; i++) {
-      console.log(char.repeat(this.size));
+      console.log(char.repeat(this.size)); // Print each row
     }
   }
 }
