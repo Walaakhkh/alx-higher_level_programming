@@ -5,10 +5,10 @@ const arg = process.argv[2];
 // Convert the argument to an integer
 const x = parseInt(arg);
 
-// Check if the conversion was successful and if x is greater than 0
-if (isNaN(x) || x <= 0) {
+// Check if the argument is a valid number and greater than zero
+if (isNaN(x)) {
   console.log('Missing number of occurrences');
-} else {
+} else if (x > 0) {
   // Loop x times to print "C is fun"
   for (let i = 0; i < x; i++) {
     console.log('C is fun');
