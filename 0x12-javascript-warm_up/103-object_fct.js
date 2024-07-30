@@ -9,6 +9,11 @@ const myObject = {
 
 console.log(myObject);
 
+// Define an anonymous function for incr
+myObject.incr = function () {
+  this.value += 1;
+};
+
 // Use the incr function to increment the value
 myObject.incr();
 console.log(myObject);
