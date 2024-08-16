@@ -1,35 +1,66 @@
-Prints a text with 2 new lines after each of these characters: ., ? and :.
+"""
+Test cases for text_indentation function.
+
 >>> text_indentation = __import__('5-text_indentation').text_indentation
->>> text_indentation("Hello. My name is ChatGPT.")
+
+# Test with a string containing '.', '?', and ':'.
+>>> text_indentation("Hello. How are you? I hope you're well: Enjoy your day.")
 Hello.
 
-My name is ChatGPT.
->>> text_indentation("How are you? I am fine. Thanks for asking.")
 How are you?
 
-I am fine.
+I hope you're well:
 
-Thanks for asking.
->>> text_indentation("Hello: World")
-Hello:
+Enjoy your day.
 
-World
->>> text_indentation("No special characters here")
-No special characters here
->>> text_indentation("This is a test. Is it working? Yes: it is.")
-This is a test.
+# Test with a string that starts with spaces.
+>>> text_indentation("   Hello.   How are you?   I hope you're well:   Enjoy your day.  ")
+Hello.
 
-Is it working?
+How are you?
+
+I hope you're well:
+
+Enjoy your day.
+
+# Test with a string that ends with '.', '?', or ':'.
+>>> text_indentation("End of sentence.")
+End of sentence.
+
+>>> text_indentation("Are you okay?")
+Are you okay?
+
+>>> text_indentation("Colon usage:")
+Colon usage:
+
+# Test with a string without '.', '?', or ':'.
+>>> text_indentation("No punctuation marks here")
+No punctuation marks here
+
+# Test with an empty string.
+>>> text_indentation("")
+<BLANKLINE>
+
+# Test with multiple punctuations in a row.
+>>> text_indentation("Wait... What?!! Really?? Yes: it's true.")
+Wait...
+
+What?!!
+
+Really??
 
 Yes:
 
-it is.
->>> text_indentation(42)
-Traceback (most recent call last):
-    ...
-TypeError: text must be a string
->>> text_indentation(["Not", "a", "string"])
+it's true.
+
+# Test when text is not a string (should raise a TypeError).
+>>> text_indentation(123)
 Traceback (most recent call last):
     ...
 TypeError: text must be a string
 
+>>> text_indentation(None)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+"""
