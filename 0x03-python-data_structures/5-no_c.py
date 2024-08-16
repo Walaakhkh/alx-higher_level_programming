@@ -1,7 +1,6 @@
 #!/usr/bin/python3
+
 def no_c(my_string):
-    if my_string[:]:
-        new_string = my_string.translate({ord("c"): None})
-        second_string = new_string.translate({ord("C"): None})
-        return second_string
-    return mt_string
+    # Create a new string with characters that are not 'c' or 'C'
+    new_string = ''.join(char for char in my_string if char not in ('c', 'C'))
+    return new_string
