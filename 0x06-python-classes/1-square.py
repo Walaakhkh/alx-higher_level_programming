@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 # 1-square.py
 """
-This module defines a class Square that defines a square with a private instance attribute 'size'.
+This module defines a class Square that defines a square
+with a private instance attribute 'size'.
 """
+
 
 class Square:
     """
@@ -16,4 +18,3 @@ class Square:
             size (int): The size of the square.
         """
         self.__size = size
-
