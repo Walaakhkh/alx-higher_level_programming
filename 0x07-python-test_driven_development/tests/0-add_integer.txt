@@ -24,4 +24,3 @@ TypeError: b must be an integer
 6
 >>> add_integer(-4, -6)
 -10
-
