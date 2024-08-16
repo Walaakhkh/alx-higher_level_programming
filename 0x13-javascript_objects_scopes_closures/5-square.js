@@ -1,10 +1,14 @@
 #!/usr/bin/node
-// 5-square.js
-const Rectangle = require('./4-rectangle');
 
-class Square extends Rectangle {
-  constructor (size) {
-    super(size, size);
+class Square {
+  /**
+   * Initializes the square with a given size.
+   * 
+   * @param {number} size - The size of the square.
+   */
+  constructor(size) {
+    this.width = size;
+    this.height = size;
   }
 }
 

@@ -1,17 +1,17 @@
 #!/usr/bin/node
-// Import the Square class from 5-square.js
-const SquareBase = require('./5-square');
+const Square = require('./5-square');
 
-class Square extends SquareBase {
-  constructor(size) {
-    super(size); // Call the parent constructor
-  }
-
-  // Method to print the square with the specified character
+class Square extends Square {
+  /**
+   * Prints the square using the character `c`.
+   * If `c` is not provided, defaults to 'X'.
+   * 
+   * @param {string} [c='X'] - The character to print the square with.
+   */
   charPrint(c) {
-    const char = c || 'X'; // Use 'X' if c is not provided
-    for (let i = 0; i < this.size; i++) {
-      console.log(char.repeat(this.size)); // Print each row
+    const char = c || 'X'; // Default to 'X' if no character is provided
+    for (let i = 0; i < this.width; i++) {
+      console.log(char.repeat(this.width));
     }
   }
 }
