@@ -3,6 +3,7 @@
 This module contains the definition of a Node and a SinglyLinkedList class.
 """
 
+
 class Node:
     """
     Class that defines a node of a singly linked list.
@@ -18,10 +19,12 @@ class Node:
 
         Args:
             data (int): The data to store in the node.
-            next_node (Node, optional): The next node in the list. Defaults to None.
+            next_node (Node, optional): The next node in the list.
+            Defaults to None.
 
         Raises:
-            TypeError: If data is not an integer or next_node is not a Node or None.
+            TypeError: If data is not an integer or next_node is not a
+            Node or None.
         """
         self.data = data
         self.next_node = next_node
@@ -83,7 +86,8 @@ class SinglyLinkedList:
 
     def __str__(self):
         """
-        Return a string representation of the list with each node data on a new line.
+        Return a string representation of the list with each node data on
+        a new line.
 
         Returns:
             str: The string representation of the list.
@@ -112,4 +116,3 @@ class SinglyLinkedList:
                 current = current.next_node
             new_node.next_node = current.next_node
             current.next_node = new_node
-
