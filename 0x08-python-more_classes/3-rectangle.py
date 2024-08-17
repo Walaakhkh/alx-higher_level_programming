@@ -23,7 +23,7 @@ class Rectangle:
     @width.setter
     def width(self, value):
         """Sets the width of the rectangle.
-        
+
         Args:
             value (int): The new width of the rectangle.
 
