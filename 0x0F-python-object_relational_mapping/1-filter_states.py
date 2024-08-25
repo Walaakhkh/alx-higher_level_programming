@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-A script that lists all states with a name starting with 'N' from the database hbtn_0e_0_usa.
+A script that lists all states with a name starting with 'N' from the
+database hbtn_0e_0_usa.
 
 Usage:
 ./1-filter_states.py <mysql_username> <mysql_password> <database_name>
@@ -30,7 +31,8 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     # Execute SQL query to select states with names starting with 'N'
-    cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
+    query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
+    cur.execute(query)
 
     # Fetch and print all rows from the query result
     rows = cur.fetchall()
