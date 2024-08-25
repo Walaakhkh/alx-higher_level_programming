@@ -1,16 +1,19 @@
 #!/usr/bin/python3
-"""Defines a function that adds attributes to objects."""
+"""
+Contains the class MyInt
+"""
 
 
-def add_attribute(obj, att, value):
-    """Add a new attribute to an object if possible.
-    Args:
-        obj (any): The object to add an attribute to.
-        att (str): The name of the attribute to add to obj.
-        value (any): The value of att.
-    Raises:
-        TypeError: If the attribute cannot be added.
-    """
-    if not hasattr(obj, "_dict_"):
-        raise TypeError("can't add new attribute")
-    setattr(obj, att, value)
+class MyInt(int):
+    """rebel version of an integer, perfect for opposite day!"""
+    def _new_(cls, *args, **kwargs):
+        """create a new instance of the class"""
+        return super(MyInt, cls)._new_(cls, *args, **kwargs)
+
+    def _eq_(self, other):
+        """what was != is now =="""
+        return int(self) != other
+
+    def _ne_(self, other):
+        """what was == is now !="""
+        return int(self) == other
