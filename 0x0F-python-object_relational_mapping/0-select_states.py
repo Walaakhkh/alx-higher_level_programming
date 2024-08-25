@@ -1,4 +1,13 @@
 #!/usr/bin/python3
+"""
+A script that lists all states from the database hbtn_0e_0_usa.
+
+Usage:
+./0-select_states.py <mysql_username> <mysql_password> <database_name>
+
+The script connects to a MySQL database running on localhost at port 3306
+and lists all states, ordered by id in ascending order.
+"""
 import MySQLdb
 import sys
 
