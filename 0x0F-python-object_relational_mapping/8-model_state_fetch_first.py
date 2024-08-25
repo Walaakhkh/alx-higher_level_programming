@@ -8,6 +8,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
+
 def main():
     if len(sys.argv) != 4:
         print("Usage: ./8-model_state_fetch_first.py <mysql username> <mysql password> <database name>")
@@ -34,6 +35,7 @@ def main():
         print(f"Error: {e}")
     finally:
         session.close()
+
 
 if __name__ == "__main__":
     main()
