@@ -2,6 +2,7 @@
 """ Module defining the Student class with serialization and deserialization.
 """
 
+
 class Student:
     """ Defines a student by first_name, last_name, and age.
     """
@@ -37,12 +38,12 @@ class Student:
                 'last_name': self.last_name,
                 'age': self.age
             }
-        
+
         result = {}
         for attr in attrs:
             if hasattr(self, attr):
                 result[attr] = getattr(self, attr)
-        
+
         return result
 
     def reload_from_json(self, json):
