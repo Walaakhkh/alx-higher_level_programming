@@ -2,13 +2,14 @@
 """ Module defining the Student class.
 """
 
+
 class Student:
     """ Defines a student by first_name, last_name, and age.
     """
 
     def __init__(self, first_name, last_name, age):
         """ Initializes the student with first_name, last_name, and age.
-        
+
         Args:
             first_name (str): The student's first name.
             last_name (str): The student's last name.
@@ -20,7 +21,7 @@ class Student:
 
     def to_json(self):
         """ Retrieves a dictionary representation of the Student instance.
-        
+
         Returns:
             dict: A dictionary representation of the student's attributes.
         """
