@@ -2,6 +2,7 @@
 """ Module for serializing class instances to JSON-compatible dictionaries.
 """
 
+
 def class_to_json(obj):
     """Returns the dictionary description with simple data structure
     (list, dictionary, string, integer, and boolean) for JSON
@@ -23,5 +24,5 @@ def class_to_json(obj):
             # Check if the value is serializable
             if isinstance(value, (int, str, bool, list, dict)):
                 result[attr] = value
-    
+
     return result
