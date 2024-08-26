@@ -1,20 +1,27 @@
 #!/usr/bin/python3
- """ Returns the dictionary description with simple data structure
-    (list, dictionary, string, integer and boolean) for JSON
-    serialization of an object."""
-
+""" Module for serializing class instances to JSON-compatible dictionaries.
+"""
 
 def class_to_json(obj):
-    # Dictionary to hold serializable attributes
+    """Returns the dictionary description with simple data structure
+    (list, dictionary, string, integer, and boolean) for JSON
+    serialization of an object.
+
+    Args:
+        obj: The object instance to serialize.
+
+    Returns:
+        A dictionary description of the object's attributes.
+    """
     result = {}
 
-    # Loop over the attributes of the object
+    # Iterate through the attributes of the object
     for attr in dir(obj):
-        # Skip private attributes and methods
-        if not attr.startswith("__"):
+        # Skip attributes that start with "__" or are callable (methods)
+        if not attr.startswith("__") and not callable(getattr(obj, attr)):
             value = getattr(obj, attr)
-            # Check if value is serializable
+            # Check if the value is serializable
             if isinstance(value, (int, str, bool, list, dict)):
                 result[attr] = value
-
+    
     return result
