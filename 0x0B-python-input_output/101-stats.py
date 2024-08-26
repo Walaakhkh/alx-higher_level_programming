@@ -7,7 +7,8 @@ def print_metrics(file_size, status_codes):
     """ Prints the metrics """
     print(f"File size: {file_size}")
     for code in sorted(status_codes.keys()):
-        print(f"{code}: {status_codes[code]}")
+        if status_codes[code] > 0:
+            print(f"{code}: {status_codes[code]}")
 
 
 def main():
@@ -33,12 +34,13 @@ def main():
                 try:
                     status_code = int(parts[6])
                     size = int(parts[7])
-                except ValueError:
+                    
+                    if status_code in status_codes:
+                        status_codes[status_code] += 1
+                    file_size += size
+                
+                except (IndexError, ValueError):
                     continue
-
-                if status_code in status_codes:
-                    status_codes[status_code] += 1
-                file_size += size
 
             if line_count % 10 == 0:
                 print_metrics(file_size, status_codes)
