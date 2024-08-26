@@ -3,12 +3,12 @@
 
 import sys
 
-
 def print_metrics(file_size, status_codes):
     """ Prints the metrics """
     print(f"File size: {file_size}")
     for code in sorted(status_codes.keys()):
         print(f"{code}: {status_codes[code]}")
+
 
 def main():
     """ Main function to process input and compute metrics """
@@ -42,9 +42,10 @@ def main():
 
             if line_count % 10 == 0:
                 print_metrics(file_size, status_codes)
-
+    
     except KeyboardInterrupt:
         print_metrics(file_size, status_codes)
+
 
 if __name__ == "__main__":
     main()
