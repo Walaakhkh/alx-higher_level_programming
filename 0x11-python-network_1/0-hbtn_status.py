@@ -1,8 +1,13 @@
 #!/usr/bin/python3
+"""
+This script fetches a URL using the urllib package and displays
+the body of the response in a specific format.
+"""
+
 import urllib.request
 
 if __name__ == "__main__":
-    url = "https://alx-intranet.hbtn.io/status"
+    url = "http://0.0.0.0:5050/status"
 
     with urllib.request.urlopen(url) as response:
         body = response.read()
