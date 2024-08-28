@@ -3,24 +3,26 @@
 
 
 def find_peak(list_of_integers):
-    """" Function that finds a peak in the shortest algorithm"""
-    if list_of_integers == []:
+    """Finds a peak element in a list of unsorted integers"""
+    def binary_peak(start, end):
+        """Helper function to perform binary search for a peak"""
+        if start == end:
+            return list_of_integers[start]
+        
+        mid = (start + end) // 2
+        
+        # Check if mid is a peak
+        if (mid == 0 or list_of_integers[mid] >= list_of_integers[mid - 1]) and \
+           (mid == len(list_of_integers) - 1 or list_of_integers[mid] >= list_of_integers[mid + 1]):
+            return list_of_integers[mid]
+
+        if mid > 0 and list_of_integers[mid] < list_of_integers[mid - 1]:
+            return binary_peak(start, mid - 1)
+
+        # Otherwise, peak lies in the right half
+        return binary_peak(mid + 1, end)
+
+    if not list_of_integers:
         return None
 
-    size = len(list_of_integers)
-    if size == 0:
-        return (None)
-    elif size == 1:
-        return (list_of_integers[0])
-    elif size == 2:
-        return max(list_of_integers)
-
-    mid = int(size/2)
-    peak = list_of_integers[mid]
-    mylist = list_of_integers
-    if peak > mylist[mid - 1] and peak > mylist[mid + 1]:
-        return peak
-    elif peak < mylist[mid - 1]:
-        return find_peak(mylist[:mid])
-    else:
-        return find_peak(mylist[mid + 1:])
+    return binary_peak(0, len(list_of_integers) - 1)
