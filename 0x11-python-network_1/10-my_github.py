@@ -15,7 +15,21 @@ if __name__ == "__main__":
     url = 'https://api.github.com/user'
 
     # Perform Basic Authentication using the username and personal access token
+<<<<<<< HEAD
     response = requests.get(url, auth=(username, personal_access_token))
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+    response = requests.get(url, auth=(username, personal_access_token))
+=======
+    response = requests.get(
+            url, auth=(username, personal_access_token)
+            )
+>>>>>>> 4f7e612... task 9
+=======
+    response = requests.get(url, auth=(username, personal_access_token))
+>>>>>>> 0356a2c... task 9
+>>>>>>> ee3211176d0210977058c5f10bc71440374948e7
 
     # Check the response status code
     if response.status_code == 200:
