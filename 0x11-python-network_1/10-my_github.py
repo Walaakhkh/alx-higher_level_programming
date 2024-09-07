@@ -9,7 +9,7 @@ import sys
 
 if __name__ == "__main__":
     # Get the username and personal access token from command-line arguments
-    Walaakhkh = sys.argv[1]
+    username = sys.argv[1]
     personal_access_token = sys.argv[2]
 
     # GitHub API URL for user information
@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     # Perform Basic Authentication using the username and personal access token
     response = requests.get(
-            url, auth=(Walaakhkh, personal_access_token)
+            url, auth=(username, personal_access_token)
             )
 
     # Check the response status code
