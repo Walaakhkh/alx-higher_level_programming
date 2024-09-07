@@ -6,13 +6,14 @@ Script that takes 2 arguments in order to solve this challenge.
 import requests
 import sys
 
+
 def list_commits(repo_name, owner_name):
     # GitHub API URL for repository commits
     url = f'https://api.github.com/repos/{owner_name}/{repo_name}/commits'
 
     # Send GET request to the GitHub API
     response = requests.get(url)
-    
+
     # Check if the response is successful
     if response.status_code == 200:
         commits = response.json()
@@ -26,6 +27,7 @@ def list_commits(repo_name, owner_name):
             count += 1
     else:
         print("Error fetching commits")
+
 
 if __name__ == "__main__":
     # Get the repository name and owner name from command-line arguments
