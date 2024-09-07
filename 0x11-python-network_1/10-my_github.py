@@ -25,4 +25,3 @@ if __name__ == "__main__":
     else:
         # Print None if the authentication failed or the user was not found
         print(None)
-
