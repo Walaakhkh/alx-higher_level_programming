@@ -16,12 +16,16 @@ if __name__ == "__main__":
 
     # Perform Basic Authentication using the username and personal access token
 <<<<<<< HEAD
+<<<<<<< HEAD
     response = requests.get(url, auth=(username, personal_access_token))
 =======
     response = requests.get(
             url, auth=(username, personal_access_token)
             )
 >>>>>>> 4f7e612... task 9
+=======
+    response = requests.get(url, auth=(username, personal_access_token))
+>>>>>>> 0356a2c... task 9
 
     # Check the response status code
     if response.status_code == 200:
