@@ -6,19 +6,18 @@ import json
 import csv
 import turtle
 
-
 class Base:
     """
     Represents the base model
     """
     __nb_objects = 0
-
-def __init__(self, id=None):
+    def __init__(self, id=None):
         if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -117,7 +116,7 @@ def __init__(self, id=None):
         """
         # corrected the name of the file extension from .json to .csv
         file_name = "{}.csv".format(cls.__name__)
-
+        
         try:
             with open(file_name, "r") as csvfile:
                 if cls.__name__ == "Rectangle":
@@ -180,6 +179,7 @@ def __init__(self, id=None):
                 turt.left(90)
 
             turt.hideturtle()
+
 
         turt.color("#FFFF00")
 
